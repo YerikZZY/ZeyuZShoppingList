@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZeyuZShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rcM-UG-4Oh">
+                                <rect key="frame" x="82.666666666666686" y="44" width="225" height="74"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Shopping List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJ0-GL-55N">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="uWZ-TP-YZn">
+                                        <rect key="frame" x="0.0" y="44" width="225" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW3-4y-oOz">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                                <state key="normal" title="New List"/>
+                                                <connections>
+                                                    <action selector="listPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v1z-bp-0zM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-8T-ocq">
+                                                <rect key="frame" x="94.999999999999986" y="0.0" width="65.000000000000014" height="30"/>
+                                                <state key="normal" title="New Item"/>
+                                                <connections>
+                                                    <action selector="itemPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBf-bj-jX7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHh-86-9RS">
+                                                <rect key="frame" x="195" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="Add"/>
+                                                <connections>
+                                                    <action selector="addPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KsI-Ab-CcP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM2-1c-oe9">
+                                <rect key="frame" x="16" y="138" width="87.333333333333329" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mni-Ea-FCd">
+                                <rect key="frame" x="111" y="131.33333333333334" width="263" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Ji5-92-iRx"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDf-hf-gRc">
+                                <rect key="frame" x="16" y="188.33333333333334" width="64.666666666666671" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Het-Bn-BNa">
+                                <rect key="frame" x="16.000000000000004" y="238.66666666666666" width="59.333333333333343" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4o-YG-mPe">
+                                <rect key="frame" x="111" y="181.66666666666666" width="263" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CDf-hf-gRc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2Bw-ho-PH6"/>
+                            <constraint firstItem="rcM-UG-4Oh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4mV-zC-oBk"/>
+                            <constraint firstItem="rcM-UG-4Oh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AZH-6b-BBd"/>
+                            <constraint firstItem="Mni-Ea-FCd" firstAttribute="leading" secondItem="DM2-1c-oe9" secondAttribute="trailing" constant="7.6699999999999999" id="KRm-3V-VAw"/>
+                            <constraint firstItem="n4o-YG-mPe" firstAttribute="centerY" secondItem="CDf-hf-gRc" secondAttribute="centerY" id="Kdi-VI-erH"/>
+                            <constraint firstItem="Het-Bn-BNa" firstAttribute="top" secondItem="CDf-hf-gRc" secondAttribute="bottom" constant="30" id="QnK-1D-htx"/>
+                            <constraint firstItem="CDf-hf-gRc" firstAttribute="top" secondItem="DM2-1c-oe9" secondAttribute="bottom" constant="30" id="X1m-9p-YK6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mni-Ea-FCd" secondAttribute="trailing" constant="16" id="cIh-Hp-yf5"/>
+                            <constraint firstItem="Mni-Ea-FCd" firstAttribute="centerY" secondItem="DM2-1c-oe9" secondAttribute="centerY" id="d8B-bP-raU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n4o-YG-mPe" secondAttribute="trailing" constant="16" id="eCZ-h6-fvX"/>
+                            <constraint firstItem="Het-Bn-BNa" firstAttribute="leading" secondItem="DM2-1c-oe9" secondAttribute="leading" id="fDh-wa-PAH"/>
+                            <constraint firstItem="CDf-hf-gRc" firstAttribute="leading" secondItem="DM2-1c-oe9" secondAttribute="leading" id="mM6-IZ-2zz"/>
+                            <constraint firstItem="Mni-Ea-FCd" firstAttribute="leading" secondItem="DM2-1c-oe9" secondAttribute="trailing" constant="7.6699999999999999" id="qDi-cf-yvK"/>
+                            <constraint firstItem="DM2-1c-oe9" firstAttribute="top" secondItem="rcM-UG-4Oh" secondAttribute="bottom" constant="20" id="usd-7w-JJQ"/>
+                            <constraint firstItem="n4o-YG-mPe" firstAttribute="leading" secondItem="CDf-hf-gRc" secondAttribute="trailing" constant="30.329999999999998" id="wNa-eT-i9b"/>
+                            <constraint firstItem="Het-Bn-BNa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wfm-l6-z9u"/>
+                        </constraints>
+                        <connections>
+                            <action selector="backgroundTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="nAn-eW-DEi"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="listLabel" destination="Het-Bn-BNa" id="3py-iz-fIS"/>
+                        <outletCollection property="textFields" destination="Mni-Ea-FCd" collectionClass="NSMutableArray" id="fmA-2j-mMM"/>
+                        <outletCollection property="textFields" destination="n4o-YG-mPe" collectionClass="NSMutableArray" id="in1-Pn-gh9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="75.355450236966817"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
